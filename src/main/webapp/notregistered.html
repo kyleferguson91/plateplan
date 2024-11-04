@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-<title>Plate Plan Login</title>
+<title>Plate Plan Register!</title>
 </head>
 <body>
 	
@@ -14,18 +14,20 @@
 		<div class="maindiv">
 			<div class="loginbox">
 				
-			<h1 class="loginboxtitle">Login</h1>
+			<h1 class="loginboxtitle">Register</h1>
 			
-			<form action="authenticate" method="post">
+			<form action="Register" method="post">
 			
 			<label for="username">Username</label>
 			<input class="logininput" type="text" name="username">
 			<label for="password">Password</label>
 			<input type="password" class="logininput" name="password">
+			<label for="email">Email</label>
+			<input type="email" class="logininput" name="email">
 			
-			<button type="submit" name="action" value="submit">Submit</button>
-			<button type="" name="action" value="register">Register</button>
-			<button type="" name="action" value="forgotpassword">Forgot Password</button>
+			
+			<button class="registerbutton" type="" name="action" value="register" style="grid-column: span 2;justify-self: center;" >Register</button>
+		
 			</form>
 			
 			</div>

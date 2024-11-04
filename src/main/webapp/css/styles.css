@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 
 
 body {
@@ -22,13 +20,106 @@ height: 100vh;
 }
 
 .headerdiv {
-	border: 2px solid red;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	align-items: center;
+	justify-items: center;
+}
+
+.mainlogo {
+	width: 150px;
+	height: 150px;
+	padding: 0;
+	margin: 0;
+		display: inline;
+}
+
+.logotitle {
+	padding: 0;
+	display: inline;
+	margin: 0;
 }
 
 .maindiv {
-	border: 2px solid red;
+	
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+
 }
 
-.footerdiv{
-	border: 2px solid red;
+
+
+.loginbox {
+		align-self: center;
+	justify-self: center;
+	width: 25em;
+	height: 25em;
+  border-radius: 25px;
+  background-color: hsla(282, 0%, 80%, 0.5);
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+.loginboxtitle {
+	align-self: center;
+	justify-self: center;
+	grid-column: span 2;
+}
+
+form {
+	grid-column: span 2;
+	display: grid;
+grid-row: span 3;
+}
+label {
+	grid-column: span 2;
+	align-self: center;
+	justify-self: center;
+	font-size: 1.5rem;
+}
+
+.logininput {
+	grid-column: span 2;
+	margin-bottom: 20px;
+	align-self: center;
+	justify-self: center;
+}
+
+.registerbutton
+{
+	
+	grid-column: span 2;
+	align-self: center;
+	justify-self: center;
+}
+
+.forgotpasswordbutton {
+	grid-column: span 2;
+	align-self: center;
+	justify-self:center;
+}
+
+button {
+	border-radius: 12px;
+	font-weight: bold;
+}
+
+
+
+footer{
+	text-align: center;
+}
+
+footer p {
+
+	text-align: center;
+}
+
+button[type="submit"]
+{
+	grid-column: span 2;
 }
