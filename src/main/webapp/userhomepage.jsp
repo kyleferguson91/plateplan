@@ -53,9 +53,9 @@ String userName = "";
 <% System.out.println("get username @ userhomepage.jsp = " +  user.getUsername()); %>
 
         <div class="userinfopane maxheightparentnav">
-            <p class="centerxygrid">Hello, <%= userName %>!</p>
+            <p class="centerxygrid hellousertext">Hello, <%= userName %>!</p>
 
-				<a href="" class="userprofilelink">
+				<a href="" class="userprofilelink centerxygrid">
 				            <img class="userpic centerxygrid" src="./images/user4848.png" alt="">
 				</a>            
         </div>
