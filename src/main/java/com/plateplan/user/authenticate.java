@@ -65,7 +65,29 @@ public class authenticate extends HttpServlet {
 		{
 			response.sendRedirect("/PlatePlan/forgotpassword.html");
 		}
-		
+		if (request.getParameter("action").equals("guest"))
+		{
+			
+			System.out.println("loop users");
+			
+			for (int i = 0; i<User.users.size(); i++)
+			{
+				System.out.println(User.users.get(i).getUsername());
+			}
+			
+			
+			
+			
+	//		User currentUser = new User("guest", "giest");
+			User currentUser = User.getUserByUsername("guest");
+	        HttpSession session = request.getSession();
+	        session.setAttribute("user", currentUser);
+			
+			//guest mode clicked, enter guest user page
+			System.out.println("set guest mode redirect home");
+			response.sendRedirect("/PlatePlan/userhomepage.jsp");
+			
+		}
 		
 		// we can query for the button clicked and the parameters passed
 		if (request.getParameter("action").equals("submit"))

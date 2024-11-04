@@ -45,12 +45,12 @@ String userName = "";
 
         <div class="searchcontainer maxheightparentnav">
             <form class="profilesearch" action="">
-                <input class="searchbox roundcorners" type="text">
+                <input class="searchbox" placeholder="Search a recipe to get started...." type="text">
                 <button class="searchbutton"><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
             </form>
             
         </div>
-
+<% System.out.println("get username @ userhomepage.jsp = " +  user.getUsername()); %>
 
         <div class="userinfopane maxheightparentnav">
             <p class="centerxygrid">Hello, <%= userName %>!</p>

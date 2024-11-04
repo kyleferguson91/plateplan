@@ -8,7 +8,7 @@ import java.util.List;
 public class User {
 	
 	//populate this list on application load, via the DB
-	static  List<User> users = new ArrayList();
+	static final List<User> users = new ArrayList();
 
 	
 	// main user info
@@ -19,7 +19,7 @@ public class User {
 
 
 	//users food info
-	public List<Recipe> myRecipes = new ArrayList();
+	public List<Recipe> myRecipes = new ArrayList<Recipe>();
 	
 	
 	

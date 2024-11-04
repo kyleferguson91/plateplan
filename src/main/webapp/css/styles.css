@@ -147,7 +147,7 @@ body {
 {
   width: 100%;
 
-  max-height: 5vh;
+  max-height: 10vh;
   background-color: white;
 
     display: grid;
@@ -169,16 +169,19 @@ body {
 
 .userpic
 {
-    width: 30px;
-    height: 30px;
+
+	grid-column: span 2;
+    height: auto;
+width: 100%;
+max-width: 110px;
 
 }
+
 .searchcontainer
 {
 
     display: grid;
 grid-template-columns: 1fr ;
-align-items: center;
 
 }
 .profilesearch
@@ -186,6 +189,7 @@ align-items: center;
     display: flex;
     align-content: space-between;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .roundcorners
@@ -195,22 +199,27 @@ align-items: center;
 
 .searchbox
 {
-height: 90%;
-width: 90%;
+	font-size: 1.2rem;
+
+height: auto;
+width: 100%;
+align-self: center;
+max-height: 50px;
 margin-right: 1rem;
 }
 
 .searchbutton
 {
-    height: 80%;
-width: 10%;
+height: auto;
+width: 100%;
+min-width: 3em;
 }
 
 
 .pptitle
 {
 font-weight: bolder;
-font-size: 1.2rem;
+font-size: 2rem;
 display: inline;
 margin-left: 0;
 justify-self: center;
@@ -223,21 +232,26 @@ align-self: center;
 }
 
 .medimg {
-    width: 34px;
-    height: 34px;
-    margin: 0;
-    padding: 0;
-    display: inline;
+height: auto;
+width: 100%;
+max-width: 1320px;
 }
 
 .titlecontainer 
 {
     display: flex;
     border: 0px solid black;
-
+	align-items: space-between;
+	justify-content: space-between;
 }
 
 .maxheightparentnav
 {
-    max-height: 5vh;
+    max-height: 10vh;
+}
+
+.userprofilelink
+{
+	max-height: max-content;
+	max-width: max-content;
 }

@@ -36,12 +36,15 @@ public class landingpageservlet extends HttpServlet {
     	try {
     		System.out.println("attempting database connection");
 			connection.createDatabaseAndTable();
+		
 		} catch (ClassNotFoundException e) {
 		
 				System.out.println("error " + e.getMessage());
 		} catch (SQLException e) {
 			System.out.println("error " + e.getMessage());
 		}
+    
+    	
     	
     }
 
@@ -64,4 +67,12 @@ public class landingpageservlet extends HttpServlet {
 		doGet(request, response);
 	}
 
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		
+		System.out.println("landing page called destroy");
+		super.destroy();
+		
+	}
 }
