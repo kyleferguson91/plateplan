@@ -63,27 +63,30 @@ String userName = "";
 				</a>     
 
     </div>
+
+</div>
+
     
     
     	<div class="profilecontent">
     			
-    			<div class="">
-    			Recipes
+    			
+    			
+    			<div class="contentbox">
+    			
+    			<div class="filler">simulatecontent</div>
     			</div>
     			
-    			<div>
-    			Etc
+    			<div class="contentbox">
+    			<div class="filler">simulatecontent</div>
     			</div>
     			
     				
-    			<div>
-    			Buttons?
+    			<div class="contentbox">
+    		<div class="filler">simulatecontent</div>
     			</div>
     			
     	</div>
-</div>
-
-
 		<div class="footerdiv">
 		<footer><p>© PlatePlan 2024</p></footer></div>
 	</div>

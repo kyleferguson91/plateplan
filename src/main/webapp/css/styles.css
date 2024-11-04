@@ -272,12 +272,26 @@ max-width: 120px;
 	
 	display: grid;
 	
-	grid-template-columns: 1fr, 1fr, 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	
 
 	
-	background-color: red;
+	background-color: palepink;
 }
+
+.contentbox 
+{
+	display: flex;
+	overflow: scroll;
+	flex-flow: column;
+}
+.filler
+{
+	width: 100%;
+	height: 1.5rem;
+	background-color: gray;
+}
+
 
 
 
