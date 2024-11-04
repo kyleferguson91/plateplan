@@ -8,11 +8,20 @@ public class User {
 	//a list on each user object to hold recipes/favs?
 
 	
-	
+	// main user info
 	private String username;
 	private String password;
 	private String email;
 	private Boolean isAuthenticated;
+	
+	
+	
+	
+	//users food info
+	public List<Recipe> myRecipes = new ArrayList();
+	
+	
+	
 	
 	public User(String username, String password, String email)
 	{
@@ -54,4 +63,9 @@ public class User {
 		this.isAuthenticated = isAuthenticated;
 	}
 	
+	
+	public void addRecipe(Recipe recipe)
+	{
+		myRecipes.add(recipe);
+	}
 }
