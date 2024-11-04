@@ -79,7 +79,21 @@ public class authenticate extends HttpServlet {
 				{
 					System.out.println("user is in the database!");
 		
-	
+
+					//find the user
+					
+					User currentUser = User.getUserByUsername(username);
+
+				
+					
+					
+					//authenticate the user 
+				
+					currentUser.setIsAuthenticated(true);
+					
+					System.out.println("current users name is " + currentUser.getUsername());
+					
+					
 				        response.sendRedirect("/PlatePlan/userhomepage.jsp"); 
 				     
 					

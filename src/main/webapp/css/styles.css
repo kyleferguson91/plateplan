@@ -123,3 +123,121 @@ button[type="submit"]
 {
 	grid-column: span 2;
 }
+
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+
+body {
+    background-color: aqua;
+}
+
+.mainlayout {
+    border: 0px solid black;	
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 10fr 1fr;
+    height: 100vh;
+    }
+
+.navcontainer 
+{
+  width: 100%;
+
+  max-height: 5vh;
+  background-color: white;
+
+    display: grid;
+    grid-template-columns: .5fr 1fr 1fr;
+}
+
+.userinfopane 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.centerxygrid
+{
+    align-self: center;
+    justify-self: center;
+}
+
+.userpic
+{
+    width: 30px;
+    height: 30px;
+
+}
+.searchcontainer
+{
+
+    display: grid;
+grid-template-columns: 1fr ;
+align-items: center;
+
+}
+.profilesearch
+{
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.roundcorners
+{
+    border-radius: 10px;
+}
+
+.searchbox
+{
+height: 90%;
+width: 90%;
+margin-right: 1rem;
+}
+
+.searchbutton
+{
+    height: 80%;
+width: 10%;
+}
+
+
+.pptitle
+{
+font-weight: bolder;
+font-size: 1.2rem;
+display: inline;
+margin-left: 0;
+justify-self: center;
+align-self: center;
+}
+
+.tinyimg {
+    width: 12px;
+    height: 12px;
+}
+
+.medimg {
+    width: 34px;
+    height: 34px;
+    margin: 0;
+    padding: 0;
+    display: inline;
+}
+
+.titlecontainer 
+{
+    display: flex;
+    border: 0px solid black;
+
+}
+
+.maxheightparentnav
+{
+    max-height: 5vh;
+}

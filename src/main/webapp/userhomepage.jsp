@@ -10,18 +10,37 @@
 </head>
 <body>
 	
-	<div class="containerdiv">
-		<div class="headerdiv"><h1 class="logotitle"> Plate Plan</h1>
-		<img class="mainlogo" src="./images/pplogo2.png"></div>
-		<div class="maindiv">
-			
-				<h1>hello user</h1>
-			
+<div class="mainlayout">
+    <div class="navcontainer">
+        <div class="titlecontainer maxheightparentnav">
+            
+            <img class=" medimg" src="./images/pplogo2.png" alt="">
+        
+            <p class="pptitle ">PlatePlan</p>
+        </div>
 
-					
 
-			</div>
-		</div>
+        <div class="searchcontainer maxheightparentnav">
+            <form class="profilesearch" action="">
+                <input class="searchbox roundcorners" type="text">
+                <button class="searchbutton"><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
+            </form>
+            
+        </div>
+
+
+        <div class="userinfopane maxheightparentnav">
+            <p class="centerxygrid">Hello, Username!</p>
+
+				<a href="" class="userprofilelink">
+				            <img class="userpic centerxygrid" src="./images/user4848.png" alt="">
+				</a>            
+        </div>
+
+    </div>
+</div>
+
+
 		<div class="footerdiv">
 		<footer><p>© PlatePlan 2024</p></footer></div>
 	</div>
