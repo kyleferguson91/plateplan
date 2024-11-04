@@ -46,25 +46,40 @@ String userName = "";
         <div class="searchcontainer maxheightparentnav">
             <form class="profilesearch" action="">
                 <input class="searchbox" placeholder="Search a recipe to get started...." type="text">
-                <button class="searchbutton"><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
+                <button class="searchbutton buttonfill"><p class="searchbuttontext">Search</p><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
             </form>
             
         </div>
 <% System.out.println("get username @ userhomepage.jsp = " +  user.getUsername()); %>
 
         <div class="userinfopane maxheightparentnav">
-            <p class="centerxygrid hellousertext">Hello, <%= userName %>!</p>
+         
+           	 <p class="centerxygrid hellousertext">Hello,<br> <%= userName %>!</p>
 
-				<a href="" class="userprofilelink centerxygrid">
+
+       
+      	<a href="" class="userprofilelink centerxygrid">
 				            <img class="userpic centerxygrid" src="./images/user4848.png" alt="">
-				</a>            
-        </div>
+				</a>     
 
     </div>
     
     
-    	<div>
-    some content
+    	<div class="profilecontent">
+    			
+    			<div class="">
+    			Recipes
+    			</div>
+    			
+    			<div>
+    			Etc
+    			</div>
+    			
+    				
+    			<div>
+    			Buttons?
+    			</div>
+    			
     	</div>
 </div>
 
