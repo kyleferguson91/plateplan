@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" import="com.plateplan.user.User"%>
+    pageEncoding="UTF-8" import="com.plateplan.user.User"
+    import="com.plateplan.recipes.Recipe"
+    %>
 
 
 
@@ -59,6 +61,11 @@ String userName = "";
         </div>
 
     </div>
+    
+    
+    	<div>
+    some content
+    	</div>
 </div>
 
 

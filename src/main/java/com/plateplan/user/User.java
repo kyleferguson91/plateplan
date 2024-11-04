@@ -74,4 +74,11 @@ public class User {
 	{
 		System.out.println("Username is: " + this.username + " am i authenticated? " + this.isAuthenticated.toString() );
 	}
+	
+	public List<Recipe>getRecipeList() 
+	{
+		return this.myRecipes;
+	}
+	
+
 }
