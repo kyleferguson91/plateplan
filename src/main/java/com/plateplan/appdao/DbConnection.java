@@ -1,7 +1,9 @@
 package com.plateplan.appdao;
+import com.plateplan.user.User;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -61,6 +63,35 @@ public class DbConnection {
             
 
        System.out.println("database and tables created!");
+       System.out.println("Loading data from database into user object list");
+       
+
+       
+       
+       ResultSet rs = null;
+       String createListSQL = "select * from users";
+       
+       rs = conn.prepareStatement(createListSQL).executeQuery();
+       
+       while(rs.next())
+       {
+    	   
+    	   //for each item, create a user object
+    	   
+    	   String username = rs.getString("username");
+    	   String email = rs.getString("email");
+    	   String password = rs.getString("password");
+    	   int id = rs.getInt("userid");
+    	   
+    	   User newUser = new User(username, password, email);
+   
+    	   
+    	   System.out.println("user " + username + " added");   
+       }
+       
+       
+    		  
+       
     //   DriverManager.deregisterDriver((Driver) dbConn);
         conn.close();   
         

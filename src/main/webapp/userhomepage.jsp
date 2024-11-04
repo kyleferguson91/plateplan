@@ -1,15 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" import="com.plateplan.user.User"%>
 
 
-<%  
-
-String user = session.getAttribute("user").toString();
-
-System.out.println("current user is " + user); 
 
 
+<%
+String userName = "";
+    User user = (User) session.getAttribute("user");
+
+    // Check if the user object is not null
+    if (user != null) {
+
+  userName = user.getUsername();
+  
+
+    }
 %>
+
+
+
+
+
 
 <html>
 <head>
@@ -40,7 +51,7 @@ System.out.println("current user is " + user);
 
 
         <div class="userinfopane maxheightparentnav">
-            <p class="centerxygrid">Hello, Username!</p>
+            <p class="centerxygrid">Hello, <%= userName %>!</p>
 
 				<a href="" class="userprofilelink">
 				            <img class="userpic centerxygrid" src="./images/user4848.png" alt="">

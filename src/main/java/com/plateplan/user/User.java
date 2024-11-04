@@ -7,9 +7,8 @@ import java.util.List;
 
 public class User {
 	
-	
-	static List<User> users = new ArrayList();
-	//a list on each user object to hold recipes/favs?
+	//populate this list on application load, via the DB
+	static  List<User> users = new ArrayList();
 
 	
 	// main user info
@@ -17,10 +16,8 @@ public class User {
 	private String password;
 	private String email;
 	private Boolean isAuthenticated;
-	
-	
-	
-	
+
+
 	//users food info
 	public List<Recipe> myRecipes = new ArrayList();
 	
