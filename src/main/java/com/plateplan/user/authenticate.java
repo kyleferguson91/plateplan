@@ -1,3 +1,4 @@
+package com.plateplan.user;
 
 
 import java.io.IOException;
@@ -10,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.plateplan.appdao.ApplicationDao;
 
 /**
  * Servlet implementation class autnticate
@@ -80,23 +83,41 @@ public class authenticate extends HttpServlet {
 					System.out.println("user is in the database!");
 		
 
-					//find the user
+				System.out.println("checking for user profile in list");
+					// find the user
+				User currentUser = User.getUserByUsername(username);
+					if (	//find the user
 					
-					User currentUser = User.getUserByUsername(username);
+						 currentUser  != null
+					)
+					{
+						System.out.println("found user profile in list");
+						//authenticate the user 
+						
+						currentUser.setIsAuthenticated(true);
+			
+						// any debug
+						currentUser.broadcast();
+						
+					
+						System.out.println("creating user session");
+						
+					  
+				        HttpSession session = request.getSession();
+				        session.setAttribute("user", currentUser);
+						
+						
+					}
+					
+					
+			
 
 				
 					
 					
-					//authenticate the user 
-				
-					currentUser.setIsAuthenticated(true);
+
 					
-					System.out.println("current users name is " + currentUser.getUsername());
-					
-					
-				        response.sendRedirect("/PlatePlan/userhomepage.jsp"); 
-				     
-					
+					  response.sendRedirect("/PlatePlan/userhomepage.jsp");
 				}
 				else {
 					System.out.println("user is not in database!");

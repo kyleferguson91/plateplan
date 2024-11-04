@@ -1,3 +1,5 @@
+package com.plateplan.recipes;
+
 
 public class Recipe {
 	

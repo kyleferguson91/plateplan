@@ -1,3 +1,4 @@
+package com.plateplan.appdao;
 import java.sql.Connection;
 import java.sql.Driver;
 import java.sql.DriverManager;

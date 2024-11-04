@@ -1,3 +1,4 @@
+package com.plateplan.services;
 
 
 import java.io.IOException;
@@ -6,6 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.plateplan.appdao.ApplicationDao;
+import com.plateplan.user.User;
 
 /**
  * Servlet implementation class Register
