@@ -50,7 +50,8 @@ String userName = "";
             </form>
             
         </div>
-<% System.out.println("get username @ userhomepage.jsp = " +  user.getUsername()); %>
+<% System.out.println("get username @ userhomepage.jsp = " +  user.getUsername());
+%>
 
         <div class="userinfopane maxheightparentnav">
          
@@ -74,16 +75,39 @@ String userName = "";
     			
     			<div class="contentbox">
     			
-    			<div class="filler">simulatecontent</div>
+<form class="overflowform" action="userhomepage.jsp" method="get">
+<button type="submit" name="recipeid" value="testrecipeid" class="filler recipe-card">Recipe Title</button>
+<button type="submit" class="filler recipe-card" name="recipeid" value="testrecipeid2">Recipe Title</button>
+<button type="submit" class="filler recipe-card" name="recipeid" value="testrecipeid3">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+<button class="filler recipe-card">Recipe Title</button>
+
+</form>
     			</div>
-    			
     			<div class="contentbox">
-    			<div class="filler">simulatecontent</div>
+    			<div class="filler">
+    			
+    			<% 
+    			String recipe;
+    			recipe = request.getParameter("recipeid"); 
+    			%>
+    			 <%= recipe %>
+    			
+    			
+    			</div>
     			</div>
     			
     				
     			<div class="contentbox">
-    		<div class="filler">simulatecontent</div>
+    		<div class="filler">Add to favs/etc..</div>
     			</div>
     			
     	</div>
