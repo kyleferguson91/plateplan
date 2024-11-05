@@ -44,9 +44,9 @@ String userName = "";
 
 
         <div class="searchcontainer maxheightparentnav">
-            <form class="profilesearch" action="">
-                <input class="searchbox" placeholder="Search a recipe to get started...." type="text">
-                <button class="searchbutton buttonfill"><p class="searchbuttontext">Search</p><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
+            <form class="profilesearch" action="api/recipes/search" method="post">
+                <input class="searchbox" placeholder="Search a recipe to get started...." type="text" name="ingredients">
+                <button class="searchbutton buttonfill" type="submit"><p class="searchbuttontext">Search</p><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
             </form>
             
         </div>

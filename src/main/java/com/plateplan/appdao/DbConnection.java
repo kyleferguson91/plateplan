@@ -81,7 +81,7 @@ public class DbConnection {
     	   String username = rs.getString("username");
     	   String email = rs.getString("email");
     	   String password = rs.getString("password");
-    	   int id = rs.getInt("userid");
+  
     	   
     	   User newUser = new User(username, password, email);
    

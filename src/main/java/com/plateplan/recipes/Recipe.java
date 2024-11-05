@@ -1,40 +1,48 @@
 package com.plateplan.recipes;
 
+import com.google.gson.annotations.SerializedName;
 
 public class Recipe {
-	
-	
-	
-	
-	
-	public Recipe(String name, String ingredients) {
+	@SerializedName("idMeal")
+	private String mealDbId;
 
-		this.name = name;
-		this.ingredients = ingredients;
+	@SerializedName("strMeal")
+	private String name;
 
+	@SerializedName("strMealThumb")
+	private String thumbnailUrl;
+
+	// Getters and setters
+	public String getMealDbId() {
+		return mealDbId;
 	}
-	
-	
-	
-	String name;
-	String ingredients;
-	
-	
+
+	public void setMealDbId(String mealDbId) {
+		this.mealDbId = mealDbId;
+	}
 
 	public String getName() {
 		return name;
 	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getIngredients() {
-		return ingredients;
-	}
-	public void setIngredients(String ingredients) {
-		this.ingredients = ingredients;
+
+	public String getThumbnailUrl() {
+		return thumbnailUrl;
 	}
 
+	public void setThumbnailUrl(String thumbnailUrl) {
+		this.thumbnailUrl = thumbnailUrl;
+	}
 
-	
-
+	@Override
+	public String toString() {
+		return "Recipe{" +
+				"mealDbId='" + mealDbId + '\'' +
+				", name='" + name + '\'' +
+				", thumbnailUrl='" + thumbnailUrl + '\'' +
+				'}';
+	}
 }

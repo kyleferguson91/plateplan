@@ -1,4 +1,3 @@
-
 package com.plateplan.recipes;
 
 import java.io.BufferedReader;
@@ -8,8 +7,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
-//import com.google.gson.Gson;
-//import com.google.gson.annotations.SerializedName;
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 
 public class MealDBService {
     private static final String API_BASE_URL = "https://www.themealdb.com/api/json/v1/1";
@@ -51,7 +50,6 @@ public class MealDBService {
             conn.disconnect();
         }
     }
-
 
     /**
      * Parses a JSON response from TheMealDB API to create a list of Recipe objects.
