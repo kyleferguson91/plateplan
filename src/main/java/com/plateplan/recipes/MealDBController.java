@@ -42,15 +42,16 @@ public class MealDBController extends HttpServlet {
             String jsonResponse = gson.toJson(recipes);
 
             // Send the JSON response
-            response.setContentType("application/json");
-            response.setCharacterEncoding("UTF-8");
-            PrintWriter out = response.getWriter();
-            out.print(jsonResponse);
-            out.flush();
+          //  response.setContentType("application/json");
+           // response.setCharacterEncoding("UTF-8");
+           // PrintWriter out = response.getWriter();
+           // out.print(jsonResponse);
+           // out.flush();
 
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching recipes.");
+           // response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching recipes.");
         }
+    	//response.sendRedirect("/PlatePlan/forgotpassword.html");
     }
 }

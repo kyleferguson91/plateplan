@@ -57,8 +57,9 @@ public class MealDBService {
      * @param json The JSON response as a String.
      * @return List of Recipe objects parsed from the JSON.
      */
-    private List<Recipe> parseRecipesJson(String json) {
+    public List<Recipe> parseRecipesJson(String json) {
         Gson gson = new Gson();
+        
         MealDBResponse response = gson.fromJson(json, MealDBResponse.class);
 
         if (response.meals == null) {

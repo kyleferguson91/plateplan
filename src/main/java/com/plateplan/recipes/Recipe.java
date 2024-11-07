@@ -3,6 +3,9 @@ package com.plateplan.recipes;
 import com.google.gson.annotations.SerializedName;
 
 public class Recipe {
+	
+
+	
 	@SerializedName("idMeal")
 	private String mealDbId;
 

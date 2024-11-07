@@ -8,8 +8,8 @@
 
 <%
 String userName = "";
-    User user = (User) session.getAttribute("user");
 
+User user = (User) session.getAttribute("user");
     // Check if the user object is not null
     if (user != null) {
 
@@ -44,14 +44,15 @@ String userName = "";
 
 
         <div class="searchcontainer maxheightparentnav">
-            <form class="profilesearch" action="api/recipes/search" method="post">
-                <input class="searchbox" placeholder="Search a recipe to get started...." type="text" name="ingredients">
+        
+            <form class="profilesearch" action="ingredientss" method="get">
+            <input hidden action="username" value=<%= userName %>>
+                <input required class="searchbox" placeholder="Search a recipe to get started...." type="text" name="ingredients">
                 <button class="searchbutton buttonfill" type="submit"><p class="searchbuttontext">Search</p><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
             </form>
             
         </div>
-<% System.out.println("get username @ userhomepage.jsp = " +  user.getUsername());
-%>
+
 
         <div class="userinfopane maxheightparentnav">
          
