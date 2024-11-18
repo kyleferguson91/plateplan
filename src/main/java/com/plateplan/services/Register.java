@@ -2,6 +2,8 @@ package com.plateplan.services;
 
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -45,23 +47,31 @@ public class Register extends HttpServlet {
 		String email = request.getParameter("email");
 		
 		
-		if (ApplicationDao.addUser(username, password, email))
-		{
-			System.out.println("user has been registered redirect");
-			
-			//create a user object for this user!
-			User user = new User(username, password, email);
-	
-		    
-		   
-		    request.getSession().setAttribute("user", user);
-		    
-		    
-		    response.sendRedirect("/PlatePlan/userhomepage.jsp");
-			
-		}
-		else {
-			System.out.println("user not registered");
+		try {
+			if (ApplicationDao.addUser(username, password, email))
+			{
+				System.out.println("user has been registered redirect");
+				
+				//create a user object for this user!
+				User user = new User(username, password, email);
+
+			    
+			   
+			    request.getSession().setAttribute("user", user);
+			    
+			    
+			    response.sendRedirect("/PlatePlan/userhomepage.jsp");
+				
+			}
+			else {
+				System.out.println("user not registered");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
 		System.out.println("new user to register " + username + " " + password + " " + email); 

@@ -32,18 +32,10 @@ public class landingpageservlet extends HttpServlet {
     public void init() throws ServletException {
     	// TODO Auto-generated method stub
     	super.init();
-    	DbConnection connection = new DbConnection();
-    	try {
-    		System.out.println("attempting database connection");
-			connection.createDatabaseAndTable();
-		
-		} catch (ClassNotFoundException e) {
-		
-				System.out.println("error " + e.getMessage());
-		} catch (SQLException e) {
-			System.out.println("error " + e.getMessage());
-		}
-    
+    	DbConnection connection = DbConnection.getInstance();
+    	System.out.println("attempting database connection");
+	connection.createDatabaseAndTable();
+    connection.closeConnection();
     	
     	
     }

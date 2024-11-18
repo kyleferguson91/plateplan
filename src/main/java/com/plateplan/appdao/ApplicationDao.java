@@ -22,14 +22,7 @@ public class ApplicationDao {
 		ResultSet rs = null;
 		Connection conn = null;
 
-		try {
-			 conn = DbConnection.getConnectionToDatabase();
-		} catch (ClassNotFoundException e) {
-			System.out.println("error in auth connection isAuthenticated() " + e.getMessage());
-		
-		} catch (SQLException e) {
-			System.out.println("error in auth connection isAuthenticated() " + e.getMessage());
-		}
+		conn = DbConnection.getInstance().getConnection();
 		
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             // Set the parameters for the query
@@ -57,20 +50,13 @@ public class ApplicationDao {
 return false;
 	}
 
-	public static Boolean addUser(String username, String password, String email)
+	public static Boolean addUser(String username, String password, String email) throws SQLException
 	{
 	
 		Connection conn = null;
 
 		
-		try {
-			 conn = DbConnection.getConnectionToDatabase();
-		} catch (ClassNotFoundException e) {
-			System.out.println("error in auth connection isAuthenticated() " + e.getMessage());
-		
-		} catch (SQLException e) {
-			System.out.println("error in auth connection isAuthenticated() " + e.getMessage());
-		}
+		conn = DbConnection.getInstance().getConnection();
 		
 		String sql = "insert into users (username, password, email) values(?,?,?)";
 		
@@ -87,7 +73,7 @@ return false;
            
            System.out.println("user added to database");
            
-           
+   		DbConnection.getInstance().closeConnection();
            return true;
 
        }
