@@ -25,7 +25,7 @@ public class User {
 	
 	
 	
-	public User(String username, String password, String email)
+	public User(String username, String password, String email, Boolean emailIsVerified)
 	{
 		this.username = username;
 		this.password = password;

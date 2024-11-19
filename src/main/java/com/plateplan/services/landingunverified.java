@@ -18,14 +18,14 @@ import com.plateplan.user.User;
 /**
  * Servlet implementation class landingpageservlet
  */
-@WebServlet("/landing")
-public class landingpageservlet extends HttpServlet {
+@WebServlet("/landingunverified")
+public class landingunverified extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public landingpageservlet() {
+    public landingunverified() {
         super();
   
     }
@@ -38,16 +38,7 @@ public class landingpageservlet extends HttpServlet {
     	
     	// TODO Auto-generated method stub
     	super.init();
-    	DbConnection connection = DbConnection.getInstance();
-    	System.out.println("attempting database connection");
-	connection.createDatabaseAndTable();
-    connection.closeConnection();
-    	
-    System.out.println("checking for static user list creation items");
-    User.showUsersList();
-    
-    //System.out.println("send email test");
-	//Email.sendEmail("plateplan0@gmail.com","test","test");
+
     	
     }
 
@@ -74,7 +65,7 @@ public class landingpageservlet extends HttpServlet {
 	public void destroy() {
 		// TODO Auto-generated method stub
 		
-		System.out.println("landing page called destroy");
+		System.out.println("landingpageverified called destroy");
 		super.destroy();
 		
 	}

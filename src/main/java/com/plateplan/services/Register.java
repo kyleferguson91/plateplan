@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.plateplan.appdao.ApplicationDao;
+import com.plateplan.email.Email;
 import com.plateplan.user.User;
 
 /**
@@ -52,15 +53,35 @@ public class Register extends HttpServlet {
 			{
 				System.out.println("user has been registered redirect");
 				
+				
+				
+				
 				//create a user object for this user!
-				User user = new User(username, password, email);
+				User user = new User(username, password, email, false);
+				
+				
 
 			    
 			   
 			    request.getSession().setAttribute("user", user);
 			    
 			    
-			    response.sendRedirect("/PlatePlan/userhomepage.jsp");
+			  //  response.sendRedirect("/PlatePlan/userhomepage.jsp");
+			    
+			    response.sendRedirect("/PlatePlan/landing");
+			    
+	
+	            new Thread(() -> {
+	                Email.sendEmail(email, "Verify Your Email With Plate Plan!", "");
+	            }).start();
+		
+			    
+
+			    
+
+			    
+			    
+			    
 				
 			}
 			else {

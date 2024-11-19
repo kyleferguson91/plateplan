@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.plateplan.user.User;
+
 public class ApplicationDao {
 
 	
@@ -17,13 +19,23 @@ public class ApplicationDao {
 	
 	public static Boolean isAuthenticated(String username, String password) throws SQLException
 	{
+		//case where email is not verified
 		
-		String sql = "Select * from users where username = ? and password = ?";
+		if (User.getUserByUsername(username).getEmailVerified() == false)
+		{
+			System.out.println("we have a username and password match but unverified email, let user know");
+
+			return false;
+		}
+		
+		
+		
+		
+		//case 1, username, password and email is verified in database, allow user to login!
+		String sql = "Select * from users where username = ? and password = ? and emailIsVerified = 1";
 		ResultSet rs = null;
 		Connection conn = null;
-
 		conn = DbConnection.getInstance().getConnection();
-		
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             // Set the parameters for the query
             pstmt.setString(1, username);
@@ -47,6 +59,8 @@ public class ApplicationDao {
             e.printStackTrace();
 
         }
+        
+        
 return false;
 	}
 
@@ -54,6 +68,8 @@ return false;
 	{
 	
 		Connection conn = null;
+		
+		// possibly add duplicate checking here in future, if duplicate cannot register!
 
 		
 		conn = DbConnection.getInstance().getConnection();

@@ -81,10 +81,11 @@ public class DbConnection {
                 String username = rs.getString("username");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
+                Boolean emailIsVerified = rs.getBoolean("emailIsVerified");
                 
                 
                 
-                User newUser = new User(username, password, email);
+                User newUser = new User(username, password, email, emailIsVerified.booleanValue());
                 System.out.println("User " + username + " added");
             }
         } catch (SQLException e) {

@@ -99,6 +99,8 @@ public class authenticate extends HttpServlet {
 			System.out.println("username: " + username + " password: " + password);
 			
 			
+		
+			
 			try {
 				if (ApplicationDao.isAuthenticated(username, password))
 				{
@@ -114,6 +116,8 @@ public class authenticate extends HttpServlet {
 					)
 					{
 						System.out.println("found user profile in list");
+	
+						
 						//authenticate the user 
 						
 						currentUser.setIsAuthenticated(true);
@@ -142,7 +146,7 @@ public class authenticate extends HttpServlet {
 					  response.sendRedirect("/PlatePlan/userhomepage.jsp");
 				}
 				else {
-					System.out.println("user is not in database!");
+					System.out.println("user is not in database! or email is unverified");
 					// redirect to register page
 					  response.sendRedirect("/PlatePlan/notregistered.html");
 				}

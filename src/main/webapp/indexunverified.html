@@ -4,30 +4,30 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="./css/styles.css">
 <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-<title>Plate Plan Register!</title>
+<title>Plate Plan Login</title>
 </head>
 <body>
-	
+	<h1>Your email is not verified! </h1>
 	<div class="containerdiv">
 		<div class="headerdiv"><h1 class="logotitle"> Plate Plan</h1>
 		<img class="mainlogo" src="./images/pplogo2.png"></div>
 		<div class="maindiv">
 			<div class="loginbox">
-		
-			<h1 class="loginboxtitle">Register</h1>
+				
+			<h1 class="loginboxtitle">Login</h1>
 			
-			<form action="Register" method="post">
+			<form action="authenticate" method="post">
 			
 			<label for="username">Username</label>
 			<input class="logininput" type="text" name="username">
 			<label for="password">Password</label>
 			<input type="password" class="logininput" name="password">
-			<label for="email">Email</label>
-			<input type="email" class="logininput" name="email">
 			
+			<button type="submit" name="action" value="submit">Submit</button>
 			
-			<button class="registerbutton"  name="action" value="register" style="grid-column: span 2;justify-self: center;" >Register</button>
-			<p>You must check your inbox and verify email to login. You will see this page until verified. Return to <a href="landing">Login Page</a></p>
+			<button type="" name="action" value="register">Register</button>
+			<button type="" name="action" value="forgotpassword">Forgot Password</button>
+			<button type="submit" name="action" value="guest">Continue as Guest</button>
 			</form>
 			
 			</div>
