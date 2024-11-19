@@ -50,7 +50,7 @@ public class ApplicationDao {
 return false;
 	}
 
-	public static Boolean addUser(String username, String password, String email) throws SQLException
+	public static Boolean addUser(String username, String password, String email, Boolean emailIsVerified) throws SQLException
 	{
 	
 		Connection conn = null;
@@ -58,7 +58,7 @@ return false;
 		
 		conn = DbConnection.getInstance().getConnection();
 		
-		String sql = "insert into users (username, password, email) values(?,?,?)";
+		String sql = "insert into users (username, password, email, emailIsVerified) values(?,?,?,?)";
 		
        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
     	   
@@ -67,6 +67,7 @@ return false;
     	   pstmt.setString(1, username);
            pstmt.setString(2, password);
            pstmt.setString(3, email);
+           pstmt.setBoolean(4, emailIsVerified);
            
            pstmt.executeUpdate();
            

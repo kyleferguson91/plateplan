@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.plateplan.appdao.DbConnection;
+import com.plateplan.user.User;
 
 /**
  * Servlet implementation class landingpageservlet
@@ -37,6 +38,8 @@ public class landingpageservlet extends HttpServlet {
 	connection.createDatabaseAndTable();
     connection.closeConnection();
     	
+    System.out.println("checking for static user list creation items");
+    User.showUsersList();
     	
     }
 

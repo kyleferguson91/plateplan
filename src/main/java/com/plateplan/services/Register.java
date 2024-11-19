@@ -48,7 +48,7 @@ public class Register extends HttpServlet {
 		
 		
 		try {
-			if (ApplicationDao.addUser(username, password, email))
+			if (ApplicationDao.addUser(username, password, email, false ))
 			{
 				System.out.println("user has been registered redirect");
 				

@@ -61,6 +61,7 @@ public class DbConnection {
                                     "`username` CHAR(40) COLLATE utf8_unicode_ci NOT NULL, " +
                                     "`password` CHAR(40) COLLATE utf8_unicode_ci DEFAULT NULL, " +
                                     "`email` CHAR(50) COLLATE utf8_unicode_ci, " +
+                                    "`emailIsVerified` BOOLEAN COLLATE utf8_unicode_ci, " +
                                     "PRIMARY KEY (`userid`)" +
                                     ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;";
             statement.executeUpdate(createTableSQL);
@@ -80,7 +81,9 @@ public class DbConnection {
                 String username = rs.getString("username");
                 String email = rs.getString("email");
                 String password = rs.getString("password");
-
+                
+                
+                
                 User newUser = new User(username, password, email);
                 System.out.println("User " + username + " added");
             }

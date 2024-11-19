@@ -8,7 +8,7 @@ import java.util.List;
 public class User {
 	
 	//populate this list on application load, via the DB
-	static final List<User> users = new ArrayList();
+	static final List<User> users = new ArrayList<User>();
 
 	
 	// main user info
@@ -16,6 +16,7 @@ public class User {
 	private String password;
 	private String email;
 	private Boolean isAuthenticated;
+	private Boolean emailVerified = false;
 
 
 	//users food info
@@ -79,6 +80,22 @@ public class User {
 	{
 		return this.myRecipes;
 	}
+
+	public Boolean getEmailVerified() {
+		return emailVerified;
+	}
+
+	public void setEmailVerified(Boolean emailVerified) {
+		this.emailVerified = emailVerified;
+	}
 	
+	
+	public static void showUsersList()
+	{
+		for (User u : users)
+		{
+			System.out.println(u.getUsername());
+		}
+	}
 
 }
