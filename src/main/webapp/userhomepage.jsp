@@ -89,7 +89,9 @@ int size = (Integer) session.getAttribute("size");
 
 List<Recipe> recipes = (List<Recipe>) session.getAttribute("recipes");
 
-if (recipes != null)
+
+
+if (recipes != null && recipes.size() > 1)
 {
 
 
@@ -104,7 +106,7 @@ String img = recipes.get(i).getThumbnailUrl();
 
 
 
-<button type="submit" class="filler recipe-card" name="" value=<%out.println(id); %> ><% out.println(name);%> <img class="recipe-card-image" src=<%out.print(img); %>></button>
+<button type="submit" class="filler recipe-card" name="recipeid" value=<%out.println(id); %> ><% out.println(name);%> <img class="recipe-card-image" src=<%out.print(img); %>></button>
 
 <% 
 }
@@ -120,16 +122,30 @@ String img = recipes.get(i).getThumbnailUrl();
     			<% 
     			String recipe;
     			recipe = request.getParameter("recipeid"); 
+    			if (recipe == null )
+    			{
+    				recipe = "Search for a recipe, or none have been found!";    			}
+    			
+    			String name;
+    			name = request.getParameter("recipename");
+    			if (name == null)
+    			{
+    				name = "recipe instructions as list?";
+    			}
     			%>
-    			 <%= recipe %>
+    			 <%= recipe + "<br><br>" + name %>
     			
     			
     			</div>
     			</div>
     			
     				
-    			<div class="contentbox">
-    		<div class="filler">Add to favs/etc..</div>
+    			<div class="fillerbox">
+    		<div class="filler">
+    		<button class="userbuttons">Add to Favorites</button>
+    		<button class="userbuttons">option?</button>
+    		<button class="userbuttons">option?</button>
+    		</div>
     			</div>
     			
     	</div>

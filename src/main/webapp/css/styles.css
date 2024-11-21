@@ -293,6 +293,15 @@ max-width: 120px;
 	overflow-x:hidden;
 	justify-content: stretch;
 }
+.fillerbox
+{
+
+	overflow-x: scroll;
+	flex-flow: column;
+	height: 100%;
+	overflow-x:hidden;
+	justify-content: stretch;
+}
 .filler
 {
 	width: 90%;
@@ -306,6 +315,14 @@ margin-bottom: 1rem;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
 border-radius:12px;
+display: flex;
+flex-flow: column;
+row-gap: 2rem;
+}
+
+.userbuttons {
+	padding: 0.9em;
+	font-size: 0.8em;
 }
 .overflowform
 {

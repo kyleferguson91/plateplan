@@ -82,12 +82,20 @@ public class ingredientServletSearch extends HttpServlet {
 				//  System.out.println(recipes.get(i).getMealDbId() + " " + recipes.get(i).getName() 
 				//		  + " " + recipes.get(i).getThumbnailUrl());
 			  }
-		        
-			  	 session.setAttribute("recipe", recipes.get(0).getMealDbId());
-			     session.setAttribute("size", size);
-			     session.setAttribute("recipes", recipes);
+			   
+			  if (recipes != null && recipes.size() > 1)
+			  {
+				  	 session.setAttribute("recipe", recipes.get(0).getMealDbId());
+				     session.setAttribute("size", size);
+				     session.setAttribute("recipes", recipes);
+			  }
+			
+			  else {
+				  session.setAttribute("recipes", null);
+			  }
 			  
-		        response.sendRedirect("/PlatePlan/userhomepage.jsp");
+				        
+			     response.sendRedirect("/PlatePlan/userhomepage.jsp");
 			
 		        
 		        
