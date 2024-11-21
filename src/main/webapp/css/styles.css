@@ -328,6 +328,17 @@ border-radius:12px;
     font-weight: bolder;
     margin: 10px; 
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; 
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    justify-items: center;
+
+}
+
+.recipe-card-image
+{
+	width: 100px;
+	height: 100px;
 }
 
 .recipe-card:hover {

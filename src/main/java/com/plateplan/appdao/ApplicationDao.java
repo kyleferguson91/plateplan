@@ -21,12 +21,7 @@ public class ApplicationDao {
 	{
 		//case where email is not verified
 		
-		if (User.getUserByUsername(username).getEmailVerified() == false)
-		{
-			System.out.println("we have a username and password match but unverified email, let user know");
 
-			return false;
-		}
 		
 		
 		

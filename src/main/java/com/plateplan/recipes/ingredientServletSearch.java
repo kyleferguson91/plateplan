@@ -48,29 +48,42 @@ public class ingredientServletSearch extends HttpServlet {
 		
 		List<Recipe> recipes;
 		
+		//currently one ingredient, here we would parse the list likely based on a delimiter
+		//and create an ingredient list of inputs to pass for multi-ingredient meals
+		
+		
 		List<String> ingredients = new ArrayList();
 		String ingredient = request.getParameter("ingredients");
+		
+		//only adding the parameter passed, no multi list
 		ingredients.add(ingredient);
+		
 		System.out.println(ingredient);
+		
 		try {
 			recipes = apicall.searchRecipes(ingredients);
-		System.out.println(recipes.toString());
+	
 		
 		
 		
 			// we have a string of all the available recipes
 			  HttpSession session = request.getSession();
 		      
-			
-			  System.out.println(recipes);
+			  
+			 // System.out.println(recipes);
 			  int size = recipes.size();
+			  
+	
+			  // here we have the results from the meal calls, we want to get these into our 
+			  // html recipe cards, then add functionality from there
 			  
 			  for (int i = 0; i<size;i++)
 			  {
-				  System.out.println(recipes.get(i).getMealDbId() + " " + recipes.get(i).getName() 
-						  + " " + recipes.get(i).getThumbnailUrl());
+				//  System.out.println(recipes.get(i).getMealDbId() + " " + recipes.get(i).getName() 
+				//		  + " " + recipes.get(i).getThumbnailUrl());
 			  }
 		        
+			  	 session.setAttribute("recipe", recipes.get(0).getMealDbId());
 			     session.setAttribute("size", size);
 			     session.setAttribute("recipes", recipes);
 			  

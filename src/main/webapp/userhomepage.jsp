@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" import="com.plateplan.user.User"
     import="com.plateplan.recipes.Recipe"
+    import="java.util.ArrayList"
+    import= "java.util.Iterator"
+    
+import="java.util.List" 
     %>
-
 
 
 
@@ -18,7 +21,6 @@ User user = (User) session.getAttribute("user");
 
     }
 %>
-
 
 
 
@@ -47,7 +49,7 @@ User user = (User) session.getAttribute("user");
         
             <form class="profilesearch" action="ingredientss" method="get">
             <input hidden action="username" value=<%= userName %>>
-                <input required class="searchbox" placeholder="Search a recipe to get started...." type="text" name="ingredients">
+                <input required class="searchbox" placeholder="Search an ingredient to get started...." type="text" name="ingredients">
                 <button class="searchbutton buttonfill" type="submit"><p class="searchbuttontext">Search</p><img class="tinyimg roundcorners" src="./images/searchicon5050.png" alt=""></button>
             </form>
             
@@ -77,19 +79,38 @@ User user = (User) session.getAttribute("user");
     			<div class="contentbox">
     			
 <form class="overflowform" action="userhomepage.jsp" method="get">
-<button type="submit" name="recipeid" value="testrecipeid" class="filler recipe-card">Recipe Title</button>
-<button type="submit" class="filler recipe-card" name="recipeid" value="testrecipeid2">Recipe Title</button>
-<button type="submit" class="filler recipe-card" name="recipeid" value="testrecipeid3">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
-<button class="filler recipe-card">Recipe Title</button>
+
+<%
+
+System.out.println("userhomepage");
+int size = (Integer) session.getAttribute("size");
+//	List<Recipe> recipes = session.getAttribute("recipes");
+//recipes stored here!
+
+List<Recipe> recipes = (List<Recipe>) session.getAttribute("recipes");
+
+if (recipes != null)
+{
+
+
+
+for(int i=0; i<recipes.size(); i++)
+{
+
+String name = recipes.get(i).getName().toString();
+String id = recipes.get(i).getMealDbId();
+String img = recipes.get(i).getThumbnailUrl();
+%>
+
+
+
+<button type="submit" class="filler recipe-card" name="" value=<%out.println(id); %> ><% out.println(name);%> <img class="recipe-card-image" src=<%out.print(img); %>></button>
+
+<% 
+}
+}
+%>
+
 
 </form>
     			</div>
