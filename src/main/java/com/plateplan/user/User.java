@@ -23,6 +23,8 @@ public class User {
 	public List<Recipe> myRecipes = new ArrayList<Recipe>();
 	
 	
+
+	
 	
 	
 	public User(String username, String password, String email, Boolean emailIsVerified)

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.plateplan.appdao.ApplicationDao;
+import com.plateplan.appdao.DbConnection;
 
 /**
  * Servlet implementation class autnticate
@@ -27,6 +28,16 @@ public class authenticate extends HttpServlet {
     public authenticate() {
         super();
         // TODO Auto-generated constructor stub
+    }
+    
+    @Override
+    public void init() throws ServletException {
+    	DbConnection connection = DbConnection.getInstance();
+    	System.out.println("attempting database connection");
+	connection.createDatabaseAndTable();
+    connection.closeConnection();
+    	// TODO Auto-generated method stub
+    	super.init();
     }
 
 	/**
@@ -76,7 +87,9 @@ public class authenticate extends HttpServlet {
 			}
 			
 			
-			
+			User user = new User("guest", "guest", "", true);
+			User.users.add(user);
+		
 			
 	//		User currentUser = new User("guest", "giest");
 			User currentUser = User.getUserByUsername("guest");
@@ -84,7 +97,10 @@ public class authenticate extends HttpServlet {
 	        session.setAttribute("user", currentUser);
 			
 			//guest mode clicked, enter guest user page
-			System.out.println("set guest mode redirect home");
+			System.out.println("create guest user set guest mode redirect home");
+
+			
+			
 			response.sendRedirect("/PlatePlan/userhomepage.jsp");
 			
 		}
