@@ -69,8 +69,8 @@ if (user != null) {
                     String protein = String.valueOf(recipes.get(i).getProtein());
                     String fat = String.valueOf(recipes.get(i).getFat());
                     String carbs = String.valueOf(recipes.get(i).getCarbs());
-
-                    System.out.println("recipe calories are " + calories + " fat is " + fat + " protein is " + protein + " carbs is " + carbs);
+					String imgurl = String.valueOf(recipes.get(i).getThumbnailUrl());
+                    
             %>
 
             <form class="overflowform" action="userhomepage.jsp" method="get">
@@ -79,9 +79,11 @@ if (user != null) {
                     <img class="recipe-card-image" src="<%= img %>">
                 </button>
                 <input type="hidden" name="calories" value="<%= calories %>">
+                 <input type="hidden" name="name" value="<%= name %>">
                  <input type="hidden" name="protein" value="<%= protein %>">
                   <input type="hidden" name="fat" value="<%= fat %>">
                    <input type="hidden" name="carbs" value="<%= carbs%>">
+                   <input type="hidden" name="imgurl" value="<%= imgurl%>">
                     
             </form>
 
@@ -104,7 +106,7 @@ if (user != null) {
             }
 
             String name;
-            name = request.getParameter("recipename");
+            name = request.getParameter("name");
             if (name == null) {
                 name = "";
             }
@@ -137,9 +139,12 @@ if (user != null) {
                         String ingredients;
                         ingredients = request.getParameter("ingredients");
                         System.out.println("ingreds " + ingredients);
-                   
+                        
+                        String imageurl;
+                        imageurl = request.getParameter("imgurl");
+                   		String imagestring = "<img class='recipe-card-image' src="+imageurl+">";
             %>
-                <%=recipe + "<br><br>" + name + "<br><br>Calories:" + calories + "<br><br>Protein:" + protein + "<br><br>Fat:" + fat + "<br><br>Carbs" + carbs  %>
+                <%= imagestring + "<strong>"+name + "<br><br>"  + "<br><br><Strong>Calories:</strong>" + calories + "<br><br>Protein:" + protein + "<br><br>Fat:" + fat + "<br><br>Carbs" + carbs  %>
 
             </div>
         </div>

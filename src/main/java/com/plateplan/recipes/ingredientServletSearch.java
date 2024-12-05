@@ -52,6 +52,7 @@ public class ingredientServletSearch extends HttpServlet {
 				session.setAttribute("protein", recipes.get(0).getProtein());
 				session.setAttribute("carbs", recipes.get(0).getCarbs());
 				session.setAttribute("fat", recipes.get(0).getFat());
+				session.setAttribute("imgurl", recipes.get(0).getThumbnailUrl());
 				session.setAttribute("ingredients", recipes.get(0).getIngredients());
 			} else {
 				session.setAttribute("recipes", null);

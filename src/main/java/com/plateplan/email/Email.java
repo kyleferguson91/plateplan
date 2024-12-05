@@ -39,8 +39,18 @@ public class Email {
 
             
             String verificationLink = "http://localhost:8080/PlatePlan/verify?email=" + toEmail;
-            String bodyWithLink = body + "<br>Click to verify your email: <a href=\"" + verificationLink + "\">Verify Now</a>";
-
+            String bodyWithLink;
+            
+            if (subject.equals("Your password is"))
+            {
+            bodyWithLink = body;
+            }
+            else 
+            {
+            bodyWithLink = body + "<br>Click to verify your email: <a href=\"" + verificationLink + "\">Verify Now</a>";
+            }
+            
+            
             message.setContent(bodyWithLink, "text/html");
 
             Transport.send(message);

@@ -79,7 +79,7 @@ public class VerifyEmailServlet extends HttpServlet {
                 	System.out.println("user is null, check user return");
                 }
                 
-                
+                response.sendRedirect("/PlatePlan/");
                 
             //close the connection
                 DbConnection.getInstance().closeConnection();
