@@ -7,9 +7,9 @@ A Java web project for finding recipes by ingredient. It uses JSP and JSTL for t
 
 ## Local setup
 
-1. Clone the repository and import it as an existing project in Eclipse IDE for Enterprise Java. The project targets JDK 21 and Tomcat 9.
-2. Set your Tomcat runtime and fix the old `D:/eclipse-workspaceEE/` library references in Java Build Path. The matching JARs are included in `src/main/webapp/WEB-INF/lib`.
-3. Create a local MySQL database named `plateplan` and configure your own connection details in `src/main/java/com/plateplan/appdao/DbConnection.java`. Keep local credentials out of Git.
-4. Run the project on Tomcat and open `/PlatePlan/landing` (or use your configured context path). Recipe searches need internet access to MealDB.
+1. Clone the repository and import it as an existing project in Eclipse IDE for Enterprise Java. Use JDK 21 and Tomcat 9.
+2. Set your Tomcat runtime and replace the old `D:/eclipse-workspaceEE/` library references in Java Build Path with the matching JARs in `src/main/webapp/WEB-INF/lib`.
+3. Run on Tomcat and open `http://localhost:8080/PlatePlan/landing`. Use the `PlatePlan` context path; redirects in the source depend on it.
+4. To try recipe search directly, open `/PlatePlan/ingredientss?ingredients=chicken`. This needs internet access to MealDB.
 
-This is a coursework project with machine-specific configuration, not a ready-to-deploy package. Account and email features need local database and mail setup; no separate SQL migration is included.
+The source compiles and recipe search runs on Tomcat. Account and email features are unfinished: `DbConnection()` does not open a database connection, and local database/mail setup is still needed. The separate `/api/recipes/search` route currently returns no JSON body.
